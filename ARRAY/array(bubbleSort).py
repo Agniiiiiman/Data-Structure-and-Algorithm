@@ -19,3 +19,28 @@ for i in range(len(my_array) - 1):
 
 # Print the sorted list
 print("Sorted array:", my_array)
+
+
+
+# Bubble Sort using function 
+
+def bubble_sort(arr):
+    n = len(arr)
+    
+    # Traverse through all array elements
+    for i in range(n):
+        # Last i elements are already sorted, so skip them
+        for j in range(0, n - i - 1):
+            # Swap if the current element is greater than the next
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+# Example array
+my_array = [64, 34, 25, 12, 22, 11, 90]
+
+print("Original array:", my_array)
+
+bubble_sort(my_array)
+
+print("Sorted array:",my_array)
+

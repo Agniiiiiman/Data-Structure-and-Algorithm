@@ -28,3 +28,32 @@ for i in range(n):
     my_array[i], my_array[min_index] = my_array[min_index], my_array[i]
 
 print("Sorted array:", my_array)
+
+
+# Using function
+
+
+def selection_sort(arr):
+    n = len(arr)
+
+    # Traverse through all elements
+    for i in range(n):
+        # Assume the current element is the minimum
+        min_index = i
+
+        # Find the actual minimum element in the remaining unsorted array
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+
+        # Swap the found minimum with the first element of the unsorted part
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+
+# Example array
+my_array = [64, 25, 12, 22, 11]
+
+print("Original array:", my_array)
+
+selection_sort(my_array)
+
+print("Sorted array:", my_array)
